@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    function getComputerChoice() {
+      let selection = ['rock', 'paper', 'scissors'];
+      let x = Math.floor(Math.random() * 3);
+      return selection[x];
+    }
+
+    function round() {
+      let computerSelection = getComputerChoice();
+      let playerSelection = prompt("Rock, Paper, or Scissors???");
+      alert("I picked " + computerSelection);
+      if (playerSelection === computerSelection) {
+        alert('tie');
+      }
+      else if (
+        (computerSelection === "rock" && playerSelection === "scissors") ||
+        (computerSelection === "paper" && playerSelection === "rock") ||
+        (computerSelection === "scissors" && playerSelection === "paper")
+      ) {
+        alert('take the L BOZO');
+      }
+      else {
+        alert('aiight');
+      }
+    }
+
+    function game() {
+      for (let i = 0; i < 5; i++){
+        round();
+      }
+    } 
+
+    game(); 
+  </script>
+</body>
+</html>
